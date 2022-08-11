@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "."
 import { respond } from "../util";
 import {
   ERROR_NOT_AUTHENTICATED,
@@ -22,9 +22,10 @@ export const fetchVideoList = async () => {
       },
     })
     .then(({ data, status }) => {
+      const parsed = JSON.parse(data)
       switch (status) {
         case 200: {
-          return respond(NO_ERROR, data.result);
+          return respond(NO_ERROR, parsed.result);
         }
         case 400:
           return respond(ERROR_BAD_REQUEST);
@@ -35,5 +36,8 @@ export const fetchVideoList = async () => {
           return respond(ERROR_UNKNOWN_ERROR);
         }
       }
+    })
+    .catch((err) => {
+      return respond(ERROR_UNKNOWN_ERROR)
     });
 };

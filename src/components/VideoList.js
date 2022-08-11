@@ -34,6 +34,8 @@ const VideoList = ({ onSelectItem }) => {
             switch (errorObject) {
               case ERROR_BAD_REQUEST:
               case ERROR_NOT_AUTHENTICATED:
+                navigate("/auth");
+                return;
               case ERROR_MISSING_AUTH_PARAMS: {
                 setNotAuthed(true);
                 return;
