@@ -27,7 +27,6 @@ const AuthView = () => {
           setValidationMessage("");
         })
         .catch((err) => {
-          console.log("HERE", err)
           setValidationMessage("Could not submit code.");
           setCodeSubmitting(false);
         });

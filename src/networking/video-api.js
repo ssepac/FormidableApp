@@ -15,7 +15,7 @@ export const fetchVideoList = async () => {
   if (!token || !email) return respond(ERROR_MISSING_AUTH_PARAMS);
 
   return axios
-    .get(`${process.env.REACT_APP_SERVER_HOSTNAME}/videos/list`, {
+    .get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/videos/list`, {
       params: {
         token,
         email: encodeURIComponent(email),

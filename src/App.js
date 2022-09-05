@@ -21,6 +21,7 @@ function App() {
       <Route path="/auth" element={<AuthView />} />
       {["/video/list", "/"].map((path) => (
         <Route
+          key={`route-path`}
           path={path}
           element={
             <VideoList

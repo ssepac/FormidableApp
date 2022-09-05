@@ -39,7 +39,7 @@ const VideoView = () => {
         <source
           src={`${
             process.env.REACT_APP_SERVER_HOSTNAME
-          }/videos?fileName=${encodeURIComponent(
+          }/api/videos?fileName=${encodeURIComponent(
             location.state.fileName
           )}&token=${token}&email=${encodeURIComponent(email)}`}
           type="video/mp4"
