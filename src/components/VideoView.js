@@ -32,8 +32,6 @@ const VideoView = () => {
         width="100%"
         controls
         playsInline
-        autoPlay
-        muted
         loop
       >
         <source
